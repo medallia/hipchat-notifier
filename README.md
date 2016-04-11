@@ -1,4 +1,4 @@
-# Hipchat Notifier
+# Medallia Hipchat Notifier
 
 ## Synopsis
 Push HipChat notifications to the configured room.

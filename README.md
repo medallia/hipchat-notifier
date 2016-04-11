@@ -4,25 +4,59 @@
 Push HipChat notifications to the configured room.
 
 ## Prerequisites
-You will need an HipChat API token for your team room & admin access to it.
+- NodeJS 4.X or higher
+- You will need an HipChat API token for your team room & admin access to it.
 
-Go to hipchat.com -> rooms -> \<room-name\> -> tokens
+### How to create a Hipchat Room Token
+1. Go to hipchat.com
+2. Click in "rooms"
+3. Click in your room name
+4. Click in "tokens"
+
+## Installation
+```bash
+npm install -g medallia-hipchat-notifier
+```
+
+## Configuration
+
+- Setup the message that you would like to send into a text file.
+
+- Prepare the `configuration` file:
+
+```
+{
+  "req-body": {
+    "from": "Jira Board Notifier",
+    "message_format": "text",
+    "color": "red",
+    "notify": "true"
+    ...
+  },
+  "settings": {
+    "api-token": "...",
+    "room": "My Awesome room"
+  }
+}
+```
+
+The `req-body` follows [HipChat V2 room notification](https://www.hipchat.com/docs/apiv2/method/send_room_notification)
 
 ## Usage
 
 ### As a binary
 ```bash
-npm install -g medallia-hipchat-notifier
 hipchat-notifier <config-file> <template-file>
 ```
 
 ### As a module
 
-`template.msg`
+#### Create your `template.msg` file
 ```
 Hi {dev1} {dev2}
 ```
 
+#### Use the plugin
 ```javascript
 var notify = require('medallia-hipchat-notifier');
 
@@ -34,28 +68,9 @@ var context = {
 notify("./config.json", "./template.msg", context);
 ```
 
-## Configuration
-
-- Setup the message that you would like to send into a file.
-
-- Prepare the `configuration` file:
-
-```json
-{
-  "req-body": {
-    "from": "Jira Board Notifier"
-    "message_format": "text",
-    "color": "red",
-    "notify": "true"
-  },
-  "settings": {
-    "api-token": "...",
-    "room": "My Awesome room"
-  }
-}
-```
-
-The `req-body` follows [HipChat V2 room notification](https://www.hipchat.com/docs/apiv2/method/send_room_notification)
+### Roadmap
+- [Support json Objects for configuration](https://github.com/medallia/hipchat-notifier/issues/1)
+- [Support template messages on the fly](https://github.com/medallia/hipchat-notifier/issues/2)
 
 ## Developer Information
 Ezequiel Bergamaschi - ezequiel@medallia.com

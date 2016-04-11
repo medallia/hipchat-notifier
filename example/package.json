@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "Hipchat notifier example",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Ezequiel Bergamaschi",
+  "license": "MIT",
+  "dependencies": {
+    "medallia-hipchat-notifier": "^1.0.1"
+  }
+}

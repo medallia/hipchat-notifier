@@ -16,5 +16,5 @@
     "request": "^2.69.0",
     "strformat": "0.0.7"
   },
-  "repository": "https://github.com/medallia/customapps-medallia-scripts"
+  "repository": "https://github.com/medallia/hipchat-notifier"
 }

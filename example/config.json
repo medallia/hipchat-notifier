@@ -1,12 +1,12 @@
 {
-  "req-body": {
-    "from": "Hipchat Notifier",
-    "message_format": "text",
-    "color": "red",
-    "notify": "true"
+  'req-body': {
+    'from': 'HipChat Notifier',
+    'message_format': 'text',
+    'color': 'red',
+    'notify': 'true'
   },
-  "settings": {
-    "api-token": "...",
-    "room": "My Awesome room"
+  'settings': {
+    'api-token': '...',
+    'room': 'My Awesome room'
   }
 }

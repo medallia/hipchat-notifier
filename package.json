@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/app.js",
   "bin": {
-    "hipchat-notifier": "bin/bin.js"
+    "hipchat-notifier": "bin/hipchat-notifier.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

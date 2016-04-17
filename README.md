@@ -65,8 +65,8 @@ Hi {dev1} {dev2}
 var notify = require('medallia-hipchat-notifier');
 
 var context = {
-  dev1: @Eze,
-  dev2: @Lucia
+  dev1: "@Eze",
+  dev2: "@Lucia"
 }
 
 // Option 1

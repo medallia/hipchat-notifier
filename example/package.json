@@ -9,6 +9,6 @@
   "author": "Ezequiel Bergamaschi",
   "license": "MIT",
   "dependencies": {
-    "medallia-hipchat-notifier": "^1.0.1"
+    "medallia-hipchat-notifier": "1.1.0"
   }
 }

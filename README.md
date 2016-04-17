@@ -72,5 +72,8 @@ notify("./config.json", "./template.msg", context);
 - [Support json Objects for configuration](https://github.com/medallia/hipchat-notifier/issues/1)
 - [Support template messages on the fly](https://github.com/medallia/hipchat-notifier/issues/2)
 
+## License
+MIT
+
 ## Developer Information
 Ezequiel Bergamaschi - ezequiel@medallia.com

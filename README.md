@@ -46,10 +46,14 @@ The `req-body` follows [HipChat V2 room notification](https://www.hipchat.com/do
 
 ### As a binary
 ```bash
-hipchat-notifier <config-file> <template-file>
+hipchat-notifier --config=<config-file> --template=<template-file>
+
+# For more options
+hipchat-notifier --help
 ```
 
 ### As a module
+You can create a template file or specify the string message.
 
 #### Create your `template.msg` file
 ```
@@ -65,12 +69,16 @@ var context = {
   dev2: @Lucia
 }
 
+// Option 1
 notify("./config.json", "./template.msg", context);
-```
 
-### Roadmap
-- [Support json Objects for configuration](https://github.com/medallia/hipchat-notifier/issues/1)
-- [Support template messages on the fly](https://github.com/medallia/hipchat-notifier/issues/2)
+// Option 2
+notify("./config.json", "Hi {dev1} {dev2}", context);
+
+// Option 3
+var config = {...}
+notify(config, "Hi {dev1} {dev2}", context);
+```
 
 ## License
 MIT

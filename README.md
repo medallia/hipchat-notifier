@@ -24,16 +24,16 @@ npm install -g @medallia/hipchat-notifier
 
 ```javascript
 {
-  'req-body': {
-    'from': 'Jira Board Notifier',
-    'message_format': 'text',
-    'color': 'red',
-    'notify': 'true'
+  "req-body": {
+    "from": "Jira Board Notifier",
+    "message_format": "text",
+    "color": "red",
+    "notify": "true"
     ...
   },
-  'settings': {
-    'api-token': '...',
-    'room': 'Room Name'
+  "settings": {
+    "api-token": "...",
+    "room": "Room Name"
   }
 }
 ```

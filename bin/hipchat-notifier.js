@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * @copyright Copyright © 2016 Medalli,a Inc. All rights reserved.
+ * @copyright Copyright © 2016 Medalla, Inc. All rights reserved.
  * @license Licensed under the MIT License (MIT).
  */
 

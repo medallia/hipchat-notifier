@@ -1,6 +1,6 @@
 {
   "req-body": {
-    "from": "Hipchat Notifier",
+    "from": "HipChat Notifier",
     "message_format": "text",
     "color": "red",
     "notify": "true"

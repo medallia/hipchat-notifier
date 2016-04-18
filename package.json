@@ -1,7 +1,20 @@
 {
-  "name": "medallia-hipchat-notifier",
-  "version": "1.1.0",
-  "description": "",
+  "name": "@medallia/hipchat-notifier",
+  "description": "Push notifications to a HipChat room",
+  "version": "1.1.1",
+  "license": "MIT",
+  "homepage": "https://github.com/medallia/hipchat-notifier",
+  "bugs": { "url": "https://github.com/medallia/hipchat-notifier/issues" },
+  "author": "Ezequiel Bergamaschi",
+  "contributors": [],
+  "keywords": [
+    "chat",
+    "hipchat",
+    "medallia",
+    "notification",
+    "notify",
+    "room"
+  ],
   "main": "lib/app.js",
   "bin": {
     "hipchat-notifier": "bin/hipchat-notifier.js"
@@ -9,12 +22,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ezequiel Bergamaschi",
   "dependencies": {
     "argv": "0.0.2",
     "nconf": "^0.8.4",
     "request": "^2.69.0",
     "strformat": "0.0.7"
   },
-  "repository": "https://github.com/medallia/hipchat-notifier"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medallia/hipchat-notifier"
+  },
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": ">=2.14.2"
+  }
 }

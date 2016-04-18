@@ -1,30 +1,28 @@
-# Medallia Hipchat Notifier
+# Medallia HipChat Notifier
 
 ## Synopsis
-Push HipChat notifications to the configured room.
+Push notifications to a [HipChat][1] room.
 
 ## Prerequisites
 - NodeJS 4.X or higher
-- You will need an HipChat API token for your team room & admin access to it.
+- A [HipChat][1] API token for and admin access to your team room
 
-### How to create a Hipchat Room Token
-1. Go to hipchat.com
-2. Click in "rooms"
-3. Click in your room name
-4. Click in "tokens"
+### Creating a HipChat Room Token
+1. Go to [hipchat.com][1].
+2. Click "rooms".
+3. Click your room name.
+4. Click "tokens".
 
 ## Installation
 ```bash
-npm install -g medallia-hipchat-notifier
+npm install -g @medallia/hipchat-notifier
 ```
 
 ## Configuration
+- Save the message to post to a text file
+- Prepare the `configuration` file as shown below:
 
-- Setup the message that you would like to send into a text file.
-
-- Prepare the `configuration` file:
-
-```
+```javascript
 {
   "req-body": {
     "from": "Jira Board Notifier",
@@ -35,12 +33,12 @@ npm install -g medallia-hipchat-notifier
   },
   "settings": {
     "api-token": "...",
-    "room": "My Awesome room"
+    "room": "Room Name"
   }
 }
 ```
 
-The `req-body` follows [HipChat V2 room notification](https://www.hipchat.com/docs/apiv2/method/send_room_notification)
+The `req-body` section follows the [room notification][2] API from HipChat.
 
 ## Usage
 
@@ -55,33 +53,35 @@ hipchat-notifier --help
 ### As a module
 You can create a template file or specify the string message.
 
-#### Create your `template.msg` file
-```
+#### Create the `template.msg` file
+```text
 Hi {dev1} {dev2}
 ```
 
 #### Use the plugin
 ```javascript
-var notify = require('medallia-hipchat-notifier');
+var notify = require('@medallia/hipchat-notifier');
 
 var context = {
-  dev1: "@Eze",
-  dev2: "@Lucia"
-}
+  dev1: '@Eze',
+  dev2: '@Lucia'
+};
 
 // Option 1
-notify("./config.json", "./template.msg", context);
+notify('./config.json', './template.msg', context);
 
 // Option 2
-notify("./config.json", "Hi {dev1} {dev2}", context);
+notify('./config.json', 'Hi {dev1} {dev2}', context);
 
 // Option 3
-var config = {...}
-notify(config, "Hi {dev1} {dev2}", context);
+var config = {...};
+notify(config, 'Hi {dev1} {dev2}', context);
 ```
 
-## License
-MIT
+## License & Copyright
+This software is copyrighted 2016 by Medallia, Inc. and released under the
+[MIT License][3].
 
-## Developer Information
-Ezequiel Bergamaschi - ezequiel@medallia.com
+[1]: https://www.hipchat.com
+[2]: https://www.hipchat.com/docs/apiv2/method/send_room_notification
+[3]: ./LICENSE

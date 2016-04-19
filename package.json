@@ -4,7 +4,9 @@
   "version": "1.1.1",
   "license": "MIT",
   "homepage": "https://github.com/medallia/hipchat-notifier",
-  "bugs": { "url": "https://github.com/medallia/hipchat-notifier/issues" },
+  "bugs": {
+    "url": "https://github.com/medallia/hipchat-notifier/issues"
+  },
   "author": "Ezequiel Bergamaschi",
   "contributors": [],
   "keywords": [
@@ -20,7 +22,7 @@
     "hipchat-notifier": "bin/hipchat-notifier.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover _mocha"
   },
   "dependencies": {
     "argv": "0.0.2",
@@ -35,5 +37,11 @@
   "engines": {
     "node": ">=4.0.0",
     "npm": ">=2.14.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "nock": "^8.0.0"
   }
 }

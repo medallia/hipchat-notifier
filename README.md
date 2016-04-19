@@ -78,6 +78,14 @@ var config = {...};
 notify(config, 'Hi {dev1} {dev2}', context);
 ```
 
+## Development
+
+### Run test
+```bash
+npm install
+npm test
+```
+
 ## License & Copyright
 This software is copyrighted 2016 by Medallia, Inc. and released under the
 [MIT License][3].

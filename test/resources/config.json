@@ -1,0 +1,13 @@
+{
+  "req-body": {
+    "from": "HipChat Notifier",
+    "message_format": "text",
+    "color": "red",
+    "notify": "true",
+    "message": ""
+  },
+  "settings": {
+    "api-token": "12345",
+    "room": "MyRoom"
+  }
+}

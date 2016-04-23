@@ -9,4 +9,6 @@ var context = {
   'DAY_MOMENT': 'morning'
 };
 
-notify('./config.json', './template.msg', context);
+notify('./config.json', './template.msg', context)
+    .then(body => console.log('Done!'))
+    .catch(error => console.error(error));

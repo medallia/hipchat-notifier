@@ -5,9 +5,13 @@
 
 "use strict";
 
-const app = require('../lib/app');
-const assert = require('chai').assert;
-const nock = require('nock');
+const chai              = require('chai');
+chai.should();
+const chaiAsPromised    = require("chai-as-promised");
+chai.use(chaiAsPromised);
+
+const nock              = require('nock');
+const app               = require('../lib/app');
 
 describe("Main test", () => {
 
@@ -28,7 +32,7 @@ describe("Main test", () => {
     const body = 'from=HipChat%20Notifier&message_format=text&color=red&notify=true&message=test';
 
     beforeEach(() => {
-        nock('http://api.hipchat.com')
+        nock('https://api.hipchat.com')
             .filteringRequestBody(/message=.*/, 'message=test')
             .post('/v2/room/' + config.settings.room + "/notification?auth_token=" + config.settings["api-token"], body)
             .reply(200, {
@@ -37,19 +41,21 @@ describe("Main test", () => {
     });
 
     it("Call without arguments test", () => {
-        assert.throws(app, "Illegal argument, expected a file path or a json Object");
+        return app().should.be.rejectedWith("Illegal argument, expected a file path or a json Object");
     });
 
     it("On the fly send test", () => {
-        app(config, "hola");
+        return app(config, "hola")
+            .should.eventually.equal("{\"ok\":true}");
     });
 
     it("From file send test", () => {
-        app("test/resources/config.json", "test/resources/template.msg")
+        return app("test/resources/config.json", "test/resources/template.msg")
+            .should.eventually.equal("{\"ok\":true}");
     });
 
     it("No template test", () => {
-        assert.throws(() => { app(config, null); }, "Message cannot be null or undefined")
+        return app(config, null).should.be.rejectedWith("Message cannot be null or undefined");
     });
 
 });

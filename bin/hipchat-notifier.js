@@ -7,6 +7,9 @@
 
 var argv = require('argv');
 
+/*
+  Option definitions for argument parsing.
+ */
 const configFile = {
     name: 'config',
     short: 'c',
@@ -37,10 +40,12 @@ argv.option(template);
 argv.option(message);
 argv.version('1.1.1');
 
+// Do an argument parsing with the given options.
 const args = argv.run();
 
 const definedMessage = args.options.message || args.options.template;
 
+// Configuration and message should be defined.
 if (!args.options.config || !(definedMessage)) {
     argv.help();
     process.exit(1);

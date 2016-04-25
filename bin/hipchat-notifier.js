@@ -46,7 +46,7 @@ const args = argv.run();
 const definedMessage = args.options.message || args.options.template;
 
 // Configuration and message should be defined.
-if (!args.options.config || !(definedMessage)) {
+if (!args.options.config || !definedMessage) {
     argv.help();
     process.exit(1);
 }

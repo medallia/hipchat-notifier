@@ -69,19 +69,19 @@ var context = {
 
 // Option 1
 notify('./config.json', './template.msg', context)
-    .then(body => resolve(body))
-    .catch(err => reject(err));
+    .then(body => console.log("Done !"))
+    .catch(err => console.error("Something wrong happened."));
 
 // Option 2
 notify('./config.json', 'Hi {dev1} {dev2}', context)
-    .then(body => resolve(body))
-    .catch(err => reject(err));
+    .then(body => console.log("Done !"))
+    .catch(err => console.error("Something wrong happened."));
 
 // Option 3
 var config = {...};
 notify(config, 'Hi {dev1} {dev2}', context)
-    .then(body => resolve(body))
-    .catch(err => reject(err));
+    .then(body => console.log("Done !"))
+    .catch(err => console.error("Something wrong happened."));
 ```
 
 ## Development

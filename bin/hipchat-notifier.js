@@ -7,9 +7,7 @@
 
 var argv = require('argv');
 
-/*
-  Option definitions for argument parsing.
- */
+// Option definitions for argument parsing.
 const configFile = {
     name: 'config',
     short: 'c',

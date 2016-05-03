@@ -11,7 +11,7 @@ const querystring = require('querystring');
 
 describe('UrlProvider test suite', () => {
     const room = 'My awesome room?';
-    const apiToken = '123///45!!';
+    const apiToken = '123   ///    45!!';
 
     it('urlObject test', () => {
         var actual = UrlProvider.urlObject(room, apiToken);
@@ -27,6 +27,11 @@ describe('UrlProvider test suite', () => {
     it('format test', () => {
         var url = UrlProvider.formatUrl(room, apiToken);
         assert.equal(querystring.unescape(url), 'https://api.hipchat.com/v2/room/' + room + '/notification?auth_token=' + apiToken);
+    });
+
+    it('format test, unescape', () => {
+        var url = UrlProvider.formatUrl(room, apiToken);
+        assert.notEqual(url, 'https://api.hipchat.com/v2/room/' + room + '/notification?auth_token=' + apiToken);
     });
 
 });

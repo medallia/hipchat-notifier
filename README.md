@@ -15,7 +15,7 @@ Push notifications to a [HipChat][1] room.
 
 ## Installation
 ```bash
-npm install -g @medallia/hipchat-notifier
+npm install -g medallia-hipchat-notifier
 ```
 
 ## Configuration
@@ -60,7 +60,7 @@ Hi {dev1} {dev2}
 
 #### Use the plugin
 ```javascript
-var notify = require('@medallia/hipchat-notifier');
+var notify = require('medallia-hipchat-notifier');
 
 var context = {
   dev1: '@Eze',

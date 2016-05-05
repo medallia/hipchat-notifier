@@ -3,7 +3,7 @@
  * @license Licensed under the MIT License (MIT).
  */
 
-var notify = require('@medallia/hipchat-notifier');
+var notify = require('medallia-hipchat-notifier');
 
 var context = {
   'DAY_MOMENT': 'morning'

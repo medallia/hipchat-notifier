@@ -1,5 +1,5 @@
 {
-  "name": "@medallia/hipchat-notifier",
+  "name": "medallia-hipchat-notifier",
   "description": "Push notifications to a HipChat room",
   "version": "1.2.0",
   "license": "MIT",
@@ -19,7 +19,7 @@
   ],
   "main": "lib/app.js",
   "bin": {
-    "hipchat-notifier": "bin/hipchat-notifier.js"
+    "medallia-hipchat-notifier": "bin/hipchat-notifier.js"
   },
   "scripts": {
     "test": "istanbul cover _mocha"
